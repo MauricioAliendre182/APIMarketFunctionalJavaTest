@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'org.platzi'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClass.set("org.platzi.Main")
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    // https://mvnrepository.com/artifact/com.beust/jcommander
+    implementation 'com.beust:jcommander:1.78'
+    // https://mvnrepository.com/artifact/io.github.openfeign/feign-core
+    implementation 'io.github.openfeign:feign-core:11.8'
+// https://mvnrepository.com/artifact/io.github.openfeign/feign-gson
+    implementation 'io.github.openfeign:feign-gson:11.8'
+
+}
+
+test {
+    useJUnitPlatform()
+}
